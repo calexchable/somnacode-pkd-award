@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Update My Pages</h1><br>
+    <div>
+        <h3>Award Winners</h3>
+        <form method="POST">
+            <label>
+                Year of Publication:<br>
+                <input id="year" type="text" name="year" /><br>
+            </label>
+            <label>
+                First Name:<br>
+                <input id="first_name" type="text" name="first_name" /><br>
+            </label>
+            <label>
+                Last Name:<br>
+                <input id="last_name" type="text" name="last_name" /><br>
+            </label>
+            <label>
+                Title:<br>
+                <input id="book_title" type="text" name="book_title" /><br>
+            </label><br>
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+
+    <hr>
+
+    {% endblock %}
