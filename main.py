@@ -22,6 +22,9 @@ class Winners(db.Model):
         self.last_name = last_name
         self.book_title = book_title
 
+class Nominees(db.Model):
+    
+
 @app.route("/")
 def index():
     return "Somnacode presents: The Philip K Dick Award APP"
