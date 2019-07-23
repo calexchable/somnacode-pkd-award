@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Philip K Dick Award Winners</h1>
+
+<div>
+    <ul>
+        {% for winner in winners %}
+            <li>
+                <h3>{{winner.year}}</h3>
+                <p><strong><em>{{winner.book_title}}</strong></em>
+                <br>By: {{winner.first_name}} {{winner.last_name}}<br></p>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

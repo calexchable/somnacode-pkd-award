@@ -23,11 +23,23 @@ class Winners(db.Model):
         self.book_title = book_title
 
 class Nominees(db.Model):
-    
+    id = db.Column(db.Integer, primary_key=True)
+    year = db.Column(db.Integer)
+    first_name = db.Column(db.String(120))
+    last_name = db.Column(db.String(120))
+    book_title = db.Column(db.String(120))
+
+    def __init__(self, year, first_name, last_name, book_title):
+        self.year = year
+        self.first_name = first_name
+        self.last_name = last_name
+        self.book_title = book_title
 
 @app.route("/")
 def index():
-    return "Somnacode presents: The Philip K Dick Award APP"
+    winners = Winners.query.all()
+
+    return render_template("award_page.html", winners=winners)
 
 @app.route("/update", methods=["POST", "GET"])
 def award_update():
